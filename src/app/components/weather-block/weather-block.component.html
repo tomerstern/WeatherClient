@@ -1,0 +1,23 @@
+<div class="block" *ngIf="weatherDetails" >
+	<br/><br/>
+	<div class="title">{{title}}</div>
+	<br/><br/>
+	<img src='assets/Images/{{this.weatherDetails.weather[0].main}}.png?rand=<?=rand(0,100000)?>' >   
+	<br/><br/>
+	{{weatherDetails.main.temp}}°
+	
+	{{weatherDetails.weather[0].main}}
+	<br/><br/>
+	<button type="button" (click)="btnClick();">{{btnVal}}</button>
+	<div *ngIf="isShowMore">
+		<ul>
+			<li>{{weatherDetails.weather[0].description}}</li>
+			<li>Feels like {{weatherDetails.main.feels_like}}°</li>
+			<li>Humidity {{weatherDetails.main.humidity}}</li>
+			<li>Wind speed {{weatherDetails.wind.speed}}</li>
+			<li>Wind deg {{weatherDetails.wind.deg}}</li>
+			<li>Wind gust {{weatherDetails.wind.gust}}</li>
+		</ul>  		
+	</div>
+</div>
+

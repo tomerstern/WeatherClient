@@ -1,0 +1,15 @@
+
+
+
+<div class="horizontal">
+	<app-weather-block 
+		[weatherDetails]="detailsForBlockLocalWeather.weatherDetails" 
+		[title]="detailsForBlockLocalWeather.title">
+	</app-weather-block>
+	<ng-container *ngFor="let dfbge of detailsForBlockGlobalWeather">
+		<app-weather-block 
+			[weatherDetails]="dfbge.weatherDetails" 
+			[title]="dfbge.title">
+		</app-weather-block>
+	</ng-container>
+</div>
